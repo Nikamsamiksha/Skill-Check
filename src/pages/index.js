@@ -1,0 +1,7 @@
+export { Home } from './Home'
+export { Login } from './Login'
+export { SignUp } from './SignUp'
+export { Quiz } from './Quiz'
+export { Score } from './Score'
+export { Games } from './Games'
+export { VideoPage } from './VideoPage'

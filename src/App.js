@@ -1,11 +1,11 @@
 import React from 'react'
-import Login from './components/Login'
 import { AuthProvider } from "../src/contexts/AuthContext";
+import { AppRoutes } from './routes/AppRoutes';
 
 export default function App() {
   return (
     <AuthProvider>
-        <Login />
+        <AppRoutes />
     </AuthProvider>
   )
 }
