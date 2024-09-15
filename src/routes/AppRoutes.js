@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Games, Home, Login, Quiz, Score, SignUp, VideoPage } from '../pages'
+import { Games, Home, Login, Quiz, Score, SignUp, VideoPage, Videos } from '../pages'
 
 export const AppRoutes = () => {
     return (
@@ -8,6 +8,7 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/subject" element={<Videos />} />
             <Route path="/video/:id" element={<VideoPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/quiz/:id" element={<Quiz />} />
