@@ -10,6 +10,7 @@ export const Videos = () => {
     const subject = searchParams.get("name");
 
     useEffect(() => {
+        console.log(videos)
     },[videos]);
     
     return (
@@ -28,13 +29,13 @@ export const Videos = () => {
             }
             {
                 videos && videos.length !== 0 && subject === "Rhymes" &&
-                videos[2].map(video => 
+                videos[3].map(video => 
                     <Video key={video.id} video={video} subject={subject}/>
                 ) 
             } 
             {
                 videos && videos.length !== 0 && subject === "Paintings" &&
-                videos[3].map(video => 
+                videos[2].map(video => 
                     <Video key={video.id} video={video} subject={subject}/>
                 ) 
             }     

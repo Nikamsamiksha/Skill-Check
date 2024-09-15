@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Games, Home, Login, Quiz, Score, SignUp, VideoPage, Videos } from '../pages'
+import { AIChat, Essays, Games, Home, Login, MathsGame, Quiz, Score, SignUp, TicTacToe, VideoPage, Videos } from '../pages'
 
 export const AppRoutes = () => {
     return (
@@ -14,6 +14,10 @@ export const AppRoutes = () => {
             <Route path="/quiz/:id" element={<Quiz />} />
             <Route path="/score/:id" element={<Score />} />
             <Route path="/games" element={<Games />}/>
+            <Route path='/essays' element={<Essays />} />
+            <Route path='/chat' element={<AIChat />} />
+            <Route path='/tic-tac-toe' element={<TicTacToe />} />
+            <Route path='/maths-game' element={<MathsGame />} />
         </Routes>
     )
 }

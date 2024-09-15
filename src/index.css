@@ -9,3 +9,7 @@ main {
     margin: auto;
     margin-top: 80px!important;
 }
+
+.games-font {
+    font-family: cursive,sans-serif;
+}

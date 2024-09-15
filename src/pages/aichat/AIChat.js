@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Games = () => {
+export const AIChat = () => {
     return (
         <div>
-            Games
+            AI Chat
         </div>
     )
 }

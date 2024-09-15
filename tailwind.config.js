@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          10: '#C2DEFF',
+          50: '#C2DEFF',
           100: '#FAADAD',
           200: '#E4C9F9',
           300: '#FFE99D',
@@ -15,6 +15,12 @@ module.exports = {
           800: '#C5CFD6',
           900: '#000000',
           1000: '#909090'
+        },
+        games: {
+          100: '#6ba368',
+          200: '#eb9486',
+          300: '#AFE64B',
+          400: '#ffff80'
         }
       }
     },
