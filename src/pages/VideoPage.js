@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
 
 export const VideoPage = () => {
-  const { id } = useParams();
+  const { id, subject } = useParams();
   const [status, setStatus] = useState(false);
   const videoUrl = `https://www.youtube.com/watch?${id}`;
 
@@ -14,7 +14,7 @@ export const VideoPage = () => {
       setStatus(false);
     }
   }
-  
+
   return (
     <main onClick={toggleMiniPlayer} className="pt-10">
       <ReactPlayer
@@ -26,14 +26,17 @@ export const VideoPage = () => {
         controls
       />
       <div>
-      <Link to={`/quiz/${id}`} className="flex justify-end my-5">
-        <button 
-        onClick={() => setStatus(!status)}
-        className="bg-primary-100 inline p-5 rounded-lg text-2xl games-font"
-        >
-            Attempt Quiz
-        </button>
-      </Link>
+        {
+          (subject === "Maths" || subject === "English") &&
+          <Link to={`/quiz/${subject}/${id}`} className="flex justify-end my-5">
+            <button
+              onClick={() => setStatus(!status)}
+              className="bg-primary-100 inline p-5 rounded-lg text-2xl games-font"
+            >
+              Attempt Quiz
+            </button>
+          </Link>
+        }
       </div>
     </main>
   );

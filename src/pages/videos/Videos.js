@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import useVideoList from '../../hooks/UseVideoList';
-import { useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Video } from './components/Video';
 
 export const Videos = () => {
     const [page, setPage] = useState(1);
     const { error, videos } = useVideoList(page);
-    const [searchParams] = useSearchParams();
-    const subject = searchParams.get("name");
-
+    // const [searchParams] = useSearchParams();
+    // const subject = searchParams.get("name");
+    
+    const { subject } = useParams();
+    
     useEffect(() => {
         console.log(videos)
     },[videos]);

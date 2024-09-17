@@ -7,9 +7,11 @@ import { Link } from 'react-router-dom';
 
 export const Video = ({ video, subject }) => {
 
+    console.log(subject);
+
     return (
         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
-            <Link to={`/video/${video.youtubeID}`}>
+            <Link to={`/video/${subject}/${video.youtubeID}`}>
                 {
                     subject === "Maths" &&
                     <img 
@@ -45,7 +47,7 @@ export const Video = ({ video, subject }) => {
             </Link>
             <div className="flex items-center justify-between">
                 <div className="p-2 py-3">
-                    <Link to={`/video/${video.youtubeID}`}>
+                    <Link to={`/video/${subject}/${video.youtubeID}`}>
                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{ video.title }</h5>
                     </Link>
                 </div>
