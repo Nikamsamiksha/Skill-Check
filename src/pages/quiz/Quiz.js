@@ -1,9 +1,8 @@
-import { getDatabase, ref, set } from "firebase/database";
 import _ from "lodash";
 import { useEffect, useReducer, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useQuestions from "../../hooks/useQuestions";
-import { useDispatch } from "react-redux";
+// import { useDispatch} from "react-redux";
 import { updateQnaList } from "../../store/qnaSlice";
 import { QuestionPills } from "./components/QuestionPills";
 import children from '../../assets/children.png';
@@ -35,13 +34,13 @@ const reducer = (state, action) => {
 
 export function Quiz() {
   const { id, subject } = useParams();
-  const { loading, error, questions } = useQuestions(id, subject);
+  const { questions } = useQuestions(id, subject);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const qnaSetter = useDispatch();
+  // const qnaSetter = useDispatch();
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   // const { currentUser } = useAuth();
-  const history = useNavigate();
+  // const history = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -51,14 +50,14 @@ export function Quiz() {
     console.log(questions)
   }, [questions]);
 
-  function handleAnswerChange(e, index) {
-    dispatch({
-      type: "answer",
-      questionID: currentQuestion,
-      optionIndex: index,
-      value: e.target.checked,
-    });
-  }
+  // function handleAnswerChange(e, index) {
+  //   dispatch({
+  //     type: "answer",
+  //     questionID: currentQuestion,
+  //     optionIndex: index,
+  //     value: e.target.checked,
+  //   });
+  // }
 
   // handle when user clicks the next button to get the next question
   function nextQuestion() {
@@ -73,27 +72,27 @@ export function Quiz() {
       setCurrentQuestion((prevCurrent) => prevCurrent - 1);
     }
   }
-  const handleNavigate = () => {
-    history("/login");
-  };
+  // const handleNavigate = () => {
+  //   history("/login");
+  // };
 
-  // submit quiz
-  async function submit() {
-    // const { uid } = currentUser;
+  // // submit quiz
+  // async function submit() {
+  //   // const { uid } = currentUser;
 
-    const db = getDatabase();
-    // const resultRef = ref(db, `result/${uid}`);
+  //   const db = getDatabase();
+  //   // const resultRef = ref(db, `result/${uid}`);
 
-    // await set(resultRef, {
-    //   [id]: qna,
-    // });
-    qnaSetter(updateQnaList({ qna }));
-    history(`/result/${id}`);
-  }
+  //   // await set(resultRef, {
+  //   //   [id]: qna,
+  //   // });
+  //   qnaSetter(updateQnaList({ qna }));
+  //   history(`/result/${id}`);
+  // }
 
   // calculate percentage of progress
-  const percentage =
-    questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
+  // const percentage =
+    // questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
 
 
@@ -135,28 +134,28 @@ export function Quiz() {
     //   )}
     // </>
     <main>
-      <div className="pt-5">
+      <div className="pt-2 lg:pt-5">
         {
           <QuestionPills />
         }
       </div>
-      <div className="flex flex-row justify-around py-10 my-5 items-center">
+      <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-10 my-2 lg:my-5 items-center">
           {
               <Question question={questions[currentQuestion]} />
           }
-        <div className="image">
+        <div className="image hidden lg:block">
           <img src={children} alt="Children Image" />
         </div>
       </div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mx-5 lg:mx-0">
         <button 
-        className="bg-primary-600 px-5 py-3 text-xl text-center rounded-lg"
+        className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg"
         onClick={() => prevQuestion()}
         >
           Prev
         </button>
         <button 
-        className="bg-primary-600 px-5 py-3 text-xl text-center rounded-lg"
+        className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg"
         onClick={() => nextQuestion()}
         >
           Next

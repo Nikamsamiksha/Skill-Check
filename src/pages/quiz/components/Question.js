@@ -11,7 +11,7 @@ export const Question = ({ question }) => {
     <>
     {
       question && 
-      <div className="questions w-9/12 pr-5">
+      <div className="questions w-full lg:w-9/12 lg:pr-5">
       <QuestionText title={question.title} />
       {/* <Options question={question} /> */}
       <div className='my-5'>

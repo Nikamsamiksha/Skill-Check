@@ -10,7 +10,7 @@ export const Video = ({ video, subject }) => {
     console.log(subject);
 
     return (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
+        <div className="lg:w-full max-w-xs lg:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
             <Link to={`/video/${subject}/${video.youtubeID}`}>
                 {
                     subject === "Maths" &&
@@ -48,7 +48,7 @@ export const Video = ({ video, subject }) => {
             <div className="flex items-center justify-between">
                 <div className="p-2 py-3">
                     <Link to={`/video/${subject}/${video.youtubeID}`}>
-                        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{ video.title }</h5>
+                        <h5 className="mb-2 text-md lg:text-xl font-bold tracking-tight text-gray-900 dark:text-white">{ video.title }</h5>
                     </Link>
                 </div>
             </div>

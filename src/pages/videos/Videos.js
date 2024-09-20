@@ -16,7 +16,7 @@ export const Videos = () => {
     },[videos]);
     
     return (
-        <main className='grid grid-cols-3 mt-80'>
+        <main className='grid grid-cols-2 lg:grid-cols-3 mt-80'>
             {
                 videos && videos.length !== 0 && subject === "English" &&
                 videos[0].map(video => 

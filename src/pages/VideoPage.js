@@ -18,7 +18,7 @@ export const VideoPage = () => {
   return (
     <main onClick={toggleMiniPlayer} className="pt-10">
       <ReactPlayer
-        className="object-cover h-[1000px] aspect-ratio"
+        className="object-cover p-5 lg:p-0 lg:h-[1000px] aspect-ratio"
         url={videoUrl}
         width="100%"
         height="100%"
@@ -28,10 +28,10 @@ export const VideoPage = () => {
       <div>
         {
           (subject === "Maths" || subject === "English") &&
-          <Link to={`/quiz/${subject}/${id}`} className="flex justify-end my-5">
+          <Link to={`/quiz/${subject}/${id}`} className="flex justify-end p-5 lg:p-0 my-2 lg:my-5">
             <button
               onClick={() => setStatus(!status)}
-              className="bg-primary-100 inline p-5 rounded-lg text-2xl games-font"
+              className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font"
             >
               Attempt Quiz
             </button>

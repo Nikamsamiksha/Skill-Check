@@ -5,7 +5,7 @@ export const QuestionPills = () => {
     const noq = [1, 2, 3, 4];
 
     return (
-        <div className="flex flex-row justify-start">
+        <div className="flex flex-row justify-evenly lg:justify-start">
             {
                 noq.map(n => (
                     <QuestionPill n={n} key={n}/>
