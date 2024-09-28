@@ -24,7 +24,7 @@ export const FeatureCard = ({ feature }) => {
             } 
             {
                 featureTitle === "Essays" &&
-                <Link to="/essays" className="flex flex-col justify-between bg-primary-50 rounded-lg shadow lg:flex-row">
+                <Link to="/essays" className="flex flex-col justify-between bg-primary-500 rounded-lg shadow lg:flex-row">
                     <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
                         <h5 className="lg:mb-2 text-xl lg:text-4xl font-bold tracking-tight text-gray-900">{feature.title}</h5>
                     </div>

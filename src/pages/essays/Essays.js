@@ -5,7 +5,6 @@ import { EssayPills } from './components/EssayPills';
 
 export const Essays = () => {
     const { loading, error, essays } = useEssays();
-    // console.log(essays)
 
     const [currentEssay, setCurrentEssay] = useState(0);
 
@@ -27,7 +26,7 @@ export const Essays = () => {
         <main className='pt-10'>
             <div className="pt-5">
                 {
-                    <EssayPills />
+                    <EssayPills currentEssay={currentEssay} setCurrentEssay={setCurrentEssay} />
                 }
             </div>
             {
@@ -35,13 +34,13 @@ export const Essays = () => {
             }
             <div className="flex flex-row justify-between mt-10">
                 <button
-                    className="bg-primary-400 px-5 py-3 text-xl text-center rounded-lg"
+                    className="bg-primary-300 px-5 py-3 text-xl text-center rounded-lg"
                     onClick={() => prevEssay()}
                 >
                     Prev
                 </button>
                 <button
-                    className="bg-primary-400 px-5 py-3 text-xl text-center rounded-lg"
+                    className="bg-primary-300 px-5 py-3 text-xl text-center rounded-lg"
                     onClick={() => nextEssay()}
                 >
                     Next

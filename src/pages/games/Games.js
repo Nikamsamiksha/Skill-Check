@@ -15,11 +15,12 @@ export const Games = () => {
                             alt="Tic Tac Toe"
                         />
                     </Link>
-                        <div className="p-2 py-3">
-                            <Link to="/">
-                                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Tic Tac Toe</h5>
-                            </Link>
-                        </div>
+                    <hr />
+                    <div className="p-2 py-3">
+                        <Link to="/">
+                            <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Tic Tac Toe</h5>
+                        </Link>
+                    </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
                     <Link to="/maths-game" >
@@ -29,11 +30,12 @@ export const Games = () => {
                             alt="Maths Game"
                         />
                     </Link>
-                        <div className="p-2 py-3">
-                            <Link to="/">
-                                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Maths Game</h5>
-                            </Link>
-                        </div>
+                    <hr className=''/>
+                    <div className="p-2 py-3">
+                        <Link to="/">
+                            <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Maths Game</h5>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </main>

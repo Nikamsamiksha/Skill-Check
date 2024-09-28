@@ -136,10 +136,10 @@ export function Quiz() {
     <main>
       <div className="pt-2 lg:pt-5">
         {
-          <QuestionPills />
+          <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
         }
       </div>
-      <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-10 my-2 lg:my-5 items-center">
+      <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
           {
               <Question question={questions[currentQuestion]} />
           }
