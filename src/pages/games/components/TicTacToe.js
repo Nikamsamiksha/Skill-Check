@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TicTacToe = () => {
     return (
-        <main>
+        <main className=''>
             <div className='box-border p-5 rounded-xl mx-auto my-28 w-[550px] h-[550px] bg-primary-400 shadow-lg'>
                 <div className='flex justify-center'>
                     <div className='p-2 bg-black shadow-lg text-games-300 text-center games-font text-xl w-64'>TIC TAC TOE</div>

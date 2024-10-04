@@ -23,24 +23,26 @@ export const Essays = () => {
     }
 
     return (
-        <main className='pt-10'>
-            <div className="pt-5">
+        <main className='pt-5 lg:pt-10'>
+            <div className="px-5 lg:px-0 lg:pt-5">
                 {
                     <EssayPills currentEssay={currentEssay} setCurrentEssay={setCurrentEssay} />
                 }
             </div>
-            {
-                essays && <Essay essay={essays[currentEssay]} />
-            }
-            <div className="flex flex-row justify-between mt-10">
+            <div className='px-5 lg:px-0'>
+                {
+                    essays && <Essay essay={essays[currentEssay]} />
+                }
+            </div>
+            <div className="flex flex-row justify-between mt-5 lg:mt-10 px-5 lg:px-0">
                 <button
-                    className="bg-primary-300 px-5 py-3 text-xl text-center rounded-lg"
+                    className="bg-primary-300 px-3 py-2 text-md lg:px-5 lg:py-3 lg:text-xl text-center rounded-lg"
                     onClick={() => prevEssay()}
                 >
                     Prev
                 </button>
                 <button
-                    className="bg-primary-300 px-5 py-3 text-xl text-center rounded-lg"
+                    className="bg-primary-300 px-3 py-2 text-md lg:px-5 lg:py-3 lg:text-xl text-center rounded-lg"
                     onClick={() => nextEssay()}
                 >
                     Next

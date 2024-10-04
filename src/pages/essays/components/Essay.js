@@ -9,8 +9,8 @@ export const Essay = ({ essay }) => {
             {
                 essay &&
                 <div>
-                    <h5 className='bg-primary-300 my-5 text-center text-3xl p-3 rounded-lg games-font'>{essay.title}</h5>
-                    <div className='bg-primary-50 p-5'>
+                    <h5 className='bg-primary-300 my-2 lg:my-5 text-center font-bold text-xl lg:text-3xl p-3 rounded-lg games-font'>{essay.title}</h5>
+                    <div className='bg-primary-50 p-2 lg:p-5'>
                         {
                             essay.points[0].map(point => (
                                 <Point point={point} />

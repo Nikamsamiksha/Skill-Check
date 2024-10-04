@@ -1,5 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../contexts/AuthContext';
+import { LoginModal } from '../../../components/LoginModal';
 
 export const SubjectCard = ({ subject }) => {
 
@@ -27,20 +29,28 @@ export const SubjectCard = ({ subject }) => {
             classNameMd = `flex justify-between bg-primary-500 rounded-lg shadow lg:hidden`
             break;
     }
+    const { currentUser } = useAuth();
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate();
+
+    function checkLogin(subjectTitle) {
+        console.log(subjectTitle)
+        currentUser ? navigate(`/${subjectTitle}`) : setShow(!show);
+    }
 
     return (
         <>
-            <Link to={`/${subject.title}`} className={className}>
+            <button onClick={() => checkLogin(subject.title)} className={className}>
                 <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
-                    <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900">{subject.title}</h5>
-                    <p className="mb-3 font-normal text-gray-700">{subject.videos} videos</p>
-                    <p className='mb-3 text-lg font-normal text-black'>{subject.description}</p>
+                    <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 self-start">{subject.title}</h5>
+                    <p className="mb-3 font-normal text-gray-700 self-start">{subject.videos} videos</p>
+                    <p className="mb-3 text-lg font-normal text-black self-start">{subject.description}</p>
                 </div>
                 <div className='p-10 w-3/6'>
                     <img className="w-min h-48 rounded-t-lg" src={subject.img} alt={subject.title} />
                 </div>
-            </Link>
-            <Link to={`/${subject.title}`} className={classNameMd}>
+            </button>
+            <div onClick={() => checkLogin(subject.title)} className={classNameMd}>
                 <div className="flex flex-col p-2">
                     <div className='flex flex-row justify-between'>
                         <div>
@@ -53,8 +63,12 @@ export const SubjectCard = ({ subject }) => {
                     </div>
                     <p className='text-sm text-black'>{subject.description}</p>
                 </div>
-
-            </Link>
+            </div>
+            {
+                show &&
+                <LoginModal show={show} setShow={setShow} />
+            }
         </>
+
     )
 }

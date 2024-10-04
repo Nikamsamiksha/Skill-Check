@@ -6,11 +6,11 @@ import maths_game from '../../assets/maths-game.png';
 export const Games = () => {
     return (
         <main className='mt-80'>
-            <div className='mt-32 flex'>
+            <div className='lg:mt-32 flex flex-col lg:flex-row px-5 lg:px-0'>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
-                    <Link to="/tic-tac-toe">
+                    <Link to="/tic-tac-toe" className='flex justify-center'>
                         <img
-                            className="rounded-t-lg h-44 m-5"
+                            className="rounded-t-lg h-32 lg:h-44 m-5"
                             src={tic_tac_toe}
                             alt="Tic Tac Toe"
                         />
@@ -23,9 +23,9 @@ export const Games = () => {
                     </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
-                    <Link to="/maths-game" >
+                    <Link to="/maths-game" className='flex justify-center'>
                         <img
-                            className="rounded-t-lg h-44 m-5"
+                            className="rounded-t-lg h-32 lg:h-44 m-5"
                             src={maths_game}
                             alt="Maths Game"
                         />
