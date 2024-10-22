@@ -25,13 +25,20 @@ export const VideoPage = () => {
         playing={status}
         controls
       />
-      <div>
+      <div className="flex justify-between p-5 lg:p-0 my-2 lg:my-5">
+        <Link to={`/`} >
+          <button
+            className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font hover:shadow-lg"
+          >
+            Back To Home
+          </button>
+        </Link>
         {
           (subject === "Maths" || subject === "English") &&
-          <Link to={`/quiz/${subject}/${id}`} className="flex justify-end p-5 lg:p-0 my-2 lg:my-5">
+          <Link to={`/quiz/${subject}/${id}`} >
             <button
               onClick={() => setStatus(!status)}
-              className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font"
+              className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font hover:shadow-lg"
             >
               Attempt Quiz
             </button>

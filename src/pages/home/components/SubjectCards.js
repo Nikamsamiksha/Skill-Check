@@ -39,7 +39,7 @@ const subjects = [
 
 export const SubjectCards = () => {
   return (
-    <div className='grid grid-cols-2 grid-rows-2 gap-2 lg:gap-5 mx-5 mt-5 mb-2 lg:m-5 lg:mt-28'>
+    <div className='grid grid-cols-2 grid-rows-2 gap-2 lg:gap-5 mx-5 mb-2'>
       {
         subjects.map((subject) => (
             <SubjectCard key={subject.id} subject={subject} />

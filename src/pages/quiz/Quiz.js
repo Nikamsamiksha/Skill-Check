@@ -1,16 +1,16 @@
 import _ from "lodash";
 import { useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useQuestions from "../../hooks/useQuestions";
-// import { useDispatch} from "react-redux";
 import { updateQnaList } from "../../store/qnaSlice";
 import { QuestionPills } from "./components/QuestionPills";
 import children from '../../assets/children.png';
 import { Question } from "./components/Question";
+import { useAuth } from "../../contexts/AuthContext";
+import { useDispatch } from "react-redux";
+import { getDatabase, ref, set } from "firebase/database";
 
 // import { TextToSpeech } from "../TextToSpeech";
-
-const initialState = null;
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -27,6 +27,8 @@ const reducer = (state, action) => {
         action.value;
 
       return questions;
+    case null:
+      return state;
     default:
       return state;
   }
@@ -36,11 +38,12 @@ export function Quiz() {
   const { id, subject } = useParams();
   const { questions } = useQuestions(id, subject);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const qnaSetter = useDispatch();
+  const qnaSetter = useDispatch();
+  const [submitBtn, setSubmitBtn] = useState(false);
 
-  const [qna, dispatch] = useReducer(reducer, initialState);
-  // const { currentUser } = useAuth();
-  // const history = useNavigate();
+  const [qna, dispatch] = useReducer(reducer, null);
+  const { currentUser } = useAuth();
+  const history = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -50,19 +53,23 @@ export function Quiz() {
     console.log(questions)
   }, [questions]);
 
-  // function handleAnswerChange(e, index) {
-  //   dispatch({
-  //     type: "answer",
-  //     questionID: currentQuestion,
-  //     optionIndex: index,
-  //     value: e.target.checked,
-  //   });
-  // }
+  function handleAnswerChange(e, index) {
+    console.log(e)
+    dispatch({
+      type: "answer",
+      questionID: currentQuestion,
+      optionIndex: index,
+      value: e.target.checked,
+    });
+  }
 
   // handle when user clicks the next button to get the next question
   function nextQuestion() {
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion((prevCurrent) => prevCurrent + 1);
+    }
+    if (currentQuestion === questions.length - 2) {
+      setSubmitBtn(true);
     }
   }
 
@@ -71,30 +78,26 @@ export function Quiz() {
     if (currentQuestion >= 1 && currentQuestion <= questions.length) {
       setCurrentQuestion((prevCurrent) => prevCurrent - 1);
     }
+    setSubmitBtn(false);
   }
-  // const handleNavigate = () => {
-  //   history("/login");
-  // };
 
-  // // submit quiz
-  // async function submit() {
-  //   // const { uid } = currentUser;
+  // submit quiz
+  async function submit() {
+    const { uid } = currentUser;
 
-  //   const db = getDatabase();
-  //   // const resultRef = ref(db, `result/${uid}`);
+    const db = getDatabase();
+    console.log(db)
+    const resultRef = ref(db, `result/${uid}`);
 
-  //   // await set(resultRef, {
-  //   //   [id]: qna,
-  //   // });
-  //   qnaSetter(updateQnaList({ qna }));
-  //   history(`/result/${id}`);
-  // }
+    await set(resultRef, {
+      [id]: qna,
+    });
+    qnaSetter(updateQnaList({ qna }));
+    history(`/result/${subject}/${id}`);
+  }
 
   // calculate percentage of progress
-  // const percentage =
-    // questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
-
-
+  const percentage = questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
   return (
     // <>
@@ -136,30 +139,40 @@ export function Quiz() {
     <main>
       <div className="pt-2 lg:pt-5">
         {
-          <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
+          <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} />
         }
       </div>
       <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
-          {
-              <Question question={questions[currentQuestion]} />
-          }
+        {
+          <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} />
+        }
         <div className="image hidden lg:block">
           <img src={children} alt="Children Image" />
         </div>
       </div>
       <div className="flex flex-row justify-between mx-5 lg:mx-0">
-        <button 
-        className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg"
-        onClick={() => prevQuestion()}
+        <button
+          className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+          onClick={() => prevQuestion()}
         >
           Prev
         </button>
-        <button 
-        className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg"
-        onClick={() => nextQuestion()}
-        >
-          Next
-        </button>
+        {
+          submitBtn ?
+            <button
+              className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+              onClick={() => submit()}
+            >
+              Submit
+            </button>
+            :
+            <button
+              className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+              onClick={() => nextQuestion()}
+            >
+              Next
+            </button>
+        }
       </div>
     </main>
   );

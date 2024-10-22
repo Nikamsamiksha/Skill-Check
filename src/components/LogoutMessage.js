@@ -15,7 +15,7 @@ export const LogoutMessage = ({show, setShow }) => {
             <p>Are you sure you want to logout?</p>
             <div className="flex justify-center my-2">
                 <button onClick={logoutConfirm}className="px-4 py-2 bg-primary-400 mx-1 rounded-lg">Yes</button>
-                <button className="px-4 py-2 bg-primary-30 mx-1 rounded-lg">No</button>
+                <button onClick={() => setShow(!show)} className="px-4 py-2 bg-primary-30 mx-1 rounded-lg">No</button>
             </div>
         </div>
     )

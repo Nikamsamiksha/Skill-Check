@@ -9,24 +9,24 @@ export const SubjectCard = ({ subject }) => {
 
     switch (subject.title) {
         case "Maths":
-            className = `flex justify-between bg-primary-100 rounded-lg shadow hidden lg:flex lg:flex-row`
-            classNameMd = `flex justify-between bg-primary-100 rounded-lg shadow lg:hidden`
+            className = `flex justify-between bg-primary-100 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
+            classNameMd = `flex justify-between bg-primary-100 rounded-lg shadow lg:hidden cursor-pointer`
             break;
         case "English":
-            className = `flex justify-between bg-primary-200 rounded-lg shadow hidden lg:flex lg:flex-row`
-            classNameMd = `flex justify-between bg-primary-200 rounded-lg shadow lg:hidden`
+            className = `flex justify-between bg-primary-200 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
+            classNameMd = `flex justify-between bg-primary-200 rounded-lg shadow lg:hidden cursor-pointer`
             break;
         case "Rhymes":
-            className = `flex justify-between bg-primary-300 rounded-lg shadow hidden lg:flex lg:flex-row`
-            classNameMd = `flex justify-between bg-primary-300 rounded-lg shadow lg:hidden`
+            className = `flex justify-between bg-primary-300 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
+            classNameMd = `flex justify-between bg-primary-300 rounded-lg shadow lg:hidden cursor-pointer`
             break;
         case "Paintings":
-            className = `flex justify-between bg-primary-400 rounded-lg shadow hidden lg:flex lg:flex-row`
-            classNameMd = `flex justify-between bg-primary-400 rounded-lg shadow lg:hidden`
+            className = `flex justify-between bg-primary-400 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
+            classNameMd = `flex justify-between bg-primary-400 rounded-lg shadow lg:hidden cursor-pointer`
             break;
         default:
             className = `flex justify-between bg-primary-500 rounded-lg shadow hidden lg:flex lg:flex-row`
-            classNameMd = `flex justify-between bg-primary-500 rounded-lg shadow lg:hidden`
+            classNameMd = `flex justify-between bg-primary-500 rounded-lg shadow lg:hidden cursor-pointer`
             break;
     }
     const { currentUser } = useAuth();
@@ -40,16 +40,16 @@ export const SubjectCard = ({ subject }) => {
 
     return (
         <>
-            <button onClick={() => checkLogin(subject.title)} className={className}>
-                <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
+            <div onClick={() => checkLogin(subject.title)} className={className} >
+                <div className="flex flex-col p-3 lg:p-5 lg:w-3/6 justify-start">
                     <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 self-start">{subject.title}</h5>
                     <p className="mb-3 font-normal text-gray-700 self-start">{subject.videos} videos</p>
-                    <p className="mb-3 text-lg font-normal text-black self-start">{subject.description}</p>
+                    <div className="mb-3 text-lg font-normal text-black">{subject.description}</div>
                 </div>
                 <div className='p-10 w-3/6'>
                     <img className="w-min h-48 rounded-t-lg" src={subject.img} alt={subject.title} />
                 </div>
-            </button>
+            </div>
             <div onClick={() => checkLogin(subject.title)} className={classNameMd}>
                 <div className="flex flex-col p-2">
                     <div className='flex flex-row justify-between'>

@@ -14,15 +14,15 @@ export const FeatureCard = ({ feature }) => {
         setFeatureTitle(feature.title);
     }, [featureTitle]);
 
-    function checkLogin() {
-        currentUser ? navigate("/games") : setShow(!show);
+    function checkLogin(link) {
+        currentUser ? navigate(`/${link}`) : setShow(!show);
     }
 
     return (
         <>
             {
                 featureTitle === "Games" &&
-                <button onClick={checkLogin} className="flex flex-col justify-between bg-primary-600 rounded-lg shadow lg:flex-row">
+                <button onClick={() =>checkLogin("games")} className="flex flex-col justify-between bg-primary-600 rounded-lg shadow lg:flex-row">
                     <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
                         <h5 className="lg:mb-2 text-xl lg:text-4xl font-bold tracking-tight text-gray-900">{feature.title}</h5>
                     </div>
@@ -33,7 +33,7 @@ export const FeatureCard = ({ feature }) => {
             } 
             {
                 featureTitle === "Essays" &&
-                <button onClick={checkLogin} className="flex flex-col justify-between bg-primary-500 rounded-lg shadow lg:flex-row">
+                <button onClick={() => checkLogin("essays")} className="flex flex-col justify-between bg-primary-500 rounded-lg shadow lg:flex-row">
                     <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
                         <h5 className="lg:mb-2 text-xl lg:text-4xl font-bold tracking-tight text-gray-900">{feature.title}</h5>
                     </div>
@@ -44,7 +44,7 @@ export const FeatureCard = ({ feature }) => {
             } 
             {
                 featureTitle === "AI Chat" &&
-                <button onClick={checkLogin} className="flex flex-col justify-between bg-primary-800 rounded-lg shadow lg:flex-row">
+                <button onClick={() => checkLogin("chat")} className="flex flex-col justify-between bg-primary-800 rounded-lg shadow lg:flex-row">
                     <div className="flex flex-col p-3 lg:p-5 lg:w-3/6">
                         <h5 className="lg:mb-2 text-xl lg:text-4xl font-bold tracking-tight text-gray-900">{feature.title}</h5>
                     </div>

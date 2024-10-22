@@ -31,6 +31,7 @@ import {
           setError(false);
           setLoading(true);
           // request firebase database
+          console.log(videoQuery)
           const snapshot = await get(videoQuery);
           setLoading(false);
           if (snapshot.exists()) {

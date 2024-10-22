@@ -12,7 +12,7 @@ export const AppRoutes = () => {
             <Route path="/video/:subject/:id" element={<VideoPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/quiz/:subject/:id" element={<Quiz />} />
-            <Route path="/score/:id" element={<Score />} />
+            <Route path="/result/:subject/:id" element={<Score />} />
             <Route path="/games" element={<Games />}/>
             <Route path='/essays' element={<Essays />} />
             <Route path='/chat' element={<AIChat />} />

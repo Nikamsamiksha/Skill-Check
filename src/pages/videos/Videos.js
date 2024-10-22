@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import useVideoList from '../../hooks/UseVideoList';
-import { useParams } from 'react-router-dom';
+import useVideoList from '../../hooks/useVideoList';
+import { Link, useParams } from 'react-router-dom';
 import { Video } from './components/Video';
 import ReactPlayer from 'react-player';
 
@@ -39,7 +39,7 @@ export const Videos = () => {
                         />
                     </div>
                 }
-                {   
+                {
                     subject === "English" &&
                     <div className='flex gap-x-2 justify-evenly content-center mb-5 px-5 lg:px-0'>
                         <h2 className='text-bold text-2xl lg:text-7xl font-serif lg:mt-8 text-primary-30 self-center'>Welcome to the world of words!</h2>
@@ -55,7 +55,7 @@ export const Videos = () => {
                         />
                     </div>
                 }
-                {   
+                {
                     subject === "Rhymes" &&
                     <div className='flex flex-row gap-x-2 justify-evenly content-center mb-5 px-5 lg:px-0'>
                         <h2 className='text-bold text-2xl lg:text-7xl font-serif lg:mt-8 text-primary-30 self-center'>Welcome to the world of ideas!
@@ -72,7 +72,7 @@ export const Videos = () => {
                         />
                     </div>
                 }
-                {   
+                {
                     subject === "Paintings" &&
                     <div className='flex gap-x-2 justify-evenly content-center mb-5 px-5 lg:px-0'>
                         <h2 className='text-bold text-2xl lg:text-7xl font-serif lg:mt-8 text-primary-30 self-center'>Welcome to the world of colors!
@@ -115,7 +115,15 @@ export const Videos = () => {
                         )
                     }
                 </div>
-
+                <div className="flex justify-between p-5 lg:p-0 my-2 lg:my-5">
+                    <Link to={`/`} >
+                        <button
+                            className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font hover:shadow-lg"
+                        >
+                            Back To Home
+                        </button>
+                    </Link>
+                </div>
             </main>
         </>
 
