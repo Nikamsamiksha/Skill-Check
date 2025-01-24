@@ -35,43 +35,48 @@ export function Summary({ score, noq }) {
     }
   };
 
+  const percentage = (score / (noq*5)) * 100;
+  
   return (
     <>
-    {setSummary()}
+      {setSummary()}
       <div className="flex items-center justify-between my-5">
         <div>
           <p className='font-bold text-6xl text-primary-40'>
             Your score is : {score} out of {noq * 5}
           </p>
+          <div class="w-full rounded-full h-2.5 my-5 border border-primary-40">
+            <div class="bg-primary-40 h-2.5 rounded-full" style={{"width": `${percentage}%`}}></div>
+          </div>
         </div>
 
         <div>
-        {
-          score === 0 &&
-          <img src={image_0} alt="Success" className='w-40 h-40'/>
-        }
-        {
-          score === 5 &&
-          <img src={image_5} alt="Success" className='w-40 h-40'/>
-        }
-        {
-          score === 10 &&
-          <img src={image_10} alt="Success" className='w-40 h-40'/>
-        }
-        {
-          score === 15 &&
-          <img src={image_15} alt="Success" className='w-40 h-40'/>
-        }
-        {
-          score === 20 &&
-          <img src={image_20} alt="Success" className='w-40 h-40'/>
-        }
+          {
+            score === 0 &&
+            <img src={image_0} alt="Success" className='w-40 h-40' />
+          }
+          {
+            score === 5 &&
+            <img src={image_5} alt="Success" className='w-40 h-40' />
+          }
+          {
+            score === 10 &&
+            <img src={image_10} alt="Success" className='w-40 h-40' />
+          }
+          {
+            score === 15 &&
+            <img src={image_15} alt="Success" className='w-40 h-40' />
+          }
+          {
+            score === 20 &&
+            <img src={image_20} alt="Success" className='w-40 h-40' />
+          }
         </div>
-          
+
       </div>
       <div className='my-5'>
-        <h2 className='font-bold text-2xl text-primary-30'>Suggestion</h2>
-        <p className='text-xl'>{message}</p>
+        <h2 className='font-bold text-3xl text-primary-30'>Suggestion</h2>
+        <p className='text-xl my-2'>{message}</p>
       </div>
     </>
   );

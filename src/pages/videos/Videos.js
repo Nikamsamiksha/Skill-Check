@@ -17,7 +17,6 @@ export const Videos = () => {
 
     useEffect(() => {
         setPage(1)
-        console.log(videos)
     }, [videos]);
 
     return (

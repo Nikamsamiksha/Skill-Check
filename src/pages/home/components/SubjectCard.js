@@ -34,7 +34,6 @@ export const SubjectCard = ({ subject }) => {
     const navigate = useNavigate();
 
     function checkLogin(subjectTitle) {
-        console.log(subjectTitle)
         currentUser ? navigate(`/${subjectTitle}`) : setShow(!show);
     }
 

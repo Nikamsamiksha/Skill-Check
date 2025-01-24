@@ -3,13 +3,11 @@ import { QuestionText } from './QuestionText'
 import { Option } from './Option';
 
 export const Question = ({ question , handleAnswerChange}) => {
-  // console.log(question)
   const optionAlphabets = ["A", "B", "C", "D"];
   let i = 0;
   const [selectedAnswer, setSelectedAnswer] = useState(5);
 
   useEffect(() => {
-    // console.log(selectedAnswer)
     setSelectedAnswer(5)
   }, [question]);
 
@@ -24,7 +22,6 @@ export const Question = ({ question , handleAnswerChange}) => {
         question &&
         <div className="questions w-full lg:w-9/12 lg:pr-5">
           <QuestionText title={question.title} />
-          {/* <Options question={question} /> */}
           <div className='my-5'>
             {
               question && question.options.map(option => (

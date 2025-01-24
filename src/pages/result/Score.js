@@ -47,11 +47,11 @@ export function Score () {
       {answers && answers.length > 0 && (
         <>
           <Summary score={userScore} noq={answers.length} />
-          <Analysis answers={answers} />
+          <Analysis answers={answers} score={userScore} />
           
           <Link to={`/`}>
             <button
-              className="bg-primary-100 px-3 py-2.5 rounded-lg"
+              className="bg-primary-100 px-3 py-2.5 rounded-lg my-3"
             >
               Back To Home
             </button>

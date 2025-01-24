@@ -50,7 +50,6 @@ export function Quiz() {
       type: "questions",
       value: questions,
     });
-    console.log(questions)
   }, [questions]);
 
   function handleAnswerChange(e, index) {
@@ -59,7 +58,7 @@ export function Quiz() {
       type: "answer",
       questionID: currentQuestion,
       optionIndex: index,
-      value: e.target.checked,
+      value: true,
     });
   }
 

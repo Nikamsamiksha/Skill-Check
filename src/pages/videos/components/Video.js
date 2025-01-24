@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 
 export const Video = ({ video, subject }) => {
 
-    console.log(subject);
-
     return (
         <div className="lg:w-full max-w-xs lg:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
             <Link to={`/video/${subject}/${video.youtubeID}`}>

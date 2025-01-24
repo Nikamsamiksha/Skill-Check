@@ -5,10 +5,11 @@ export default function Question({ answers = [] }) {
 
   return answers.map((answer, index) => (
     <div key={index} className="my-5">
-      <div className="text-xl">
+      <div className="text-xl flex flex-col gap-3">
         Q{i++}. {answer.title}
-      </div>
+      
       <Answers input={false} options={answer.options} />
+      </div>
     </div>
   ));
 }

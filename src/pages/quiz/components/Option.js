@@ -6,14 +6,13 @@ export const Option = ({ option, optionAlphabet, optionNumber, setSelectedAnswer
         <>
             {
                 flag ?
-                    <div className="my-1 lg:my-2 flex flex-row bg-primary-400 rounded-lg px-2 lg:px-5 py-1.5 lg:py-3 text-center items-center cursor-pointer hover:shadow-lg">
-                        <input id="green-radio" type="radio" value="" name="colored-radio" className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 " onClick={(e) => setSelectedAnswer(e, optionNumber - 1)}/>
-                        {/* <div className='bg-white rounded-full p-1 lg:p-2 px-2.5 lg:px-4 text-md lg:text-xl m-1 mx-2'>{optionAlphabet}</div> */}
+                    <div className="my-1 lg:my-2 flex flex-row bg-primary-400 rounded-lg px-2 lg:px-5 py-1.5 lg:py-3 text-center items-center cursor-pointer hover:shadow-lg" onClick={(e) => setSelectedAnswer(e, optionNumber - 1)}>
+                        <div className='bg-white rounded-full p-1 lg:p-2 px-2.5 lg:px-4 text-md lg:text-xl m-1 mx-2'>{optionAlphabet}</div>
                         <label htmlFor="green-radio" className='text-md lg:text-xl m-1 mx-2'>{option}</label>
                     </div>
                     :
-                    <div className="my-1 lg:my-2 flex flex-row bg-primary-200 rounded-lg px-2 lg:px-5 py-1.5 lg:py-3 text-center items-center cursor-pointer hover:shadow-lg">
-                        <input id={optionAlphabet} type="radio" value="" name="colored-radio" className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500" onClick={(e) => setSelectedAnswer(e, optionNumber - 1)}/>
+                    <div className="my-1 lg:my-2 flex flex-row bg-primary-200 rounded-lg px-2 lg:px-5 py-1.5 lg:py-3 text-center items-center cursor-pointer hover:shadow-lg" onClick={(e) => setSelectedAnswer(e, optionNumber - 1)}>
+                        <div className='bg-white rounded-full p-1 lg:p-2 px-2.5 lg:px-4 text-md lg:text-xl m-1 mx-2'>{optionAlphabet}</div>
                         <label htmlFor={optionAlphabet} className='text-md lg:text-xl m-1 mx-2'>{option}</label>
                     </div>
             }
