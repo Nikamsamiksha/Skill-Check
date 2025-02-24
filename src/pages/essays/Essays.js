@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import useEssays from '../../hooks/useEssays';
 import { Essay } from './components/Essay';
 import { EssayPills } from './components/EssayPills';
+import { Link } from 'react-router-dom';
 
 export const Essays = () => {
     const { loading, error, essays } = useEssays();
@@ -24,6 +25,13 @@ export const Essays = () => {
 
     return (
         <main className='pt-5 lg:pt-10'>
+            <Link to={`/`}>
+                <button
+                    className="lg:mt-5 bg-primary-100 px-3 py-2.5 rounded-lg my-3"
+                >
+                    Back To Home
+                </button>
+            </Link>
             <div className="px-5 lg:px-0 lg:pt-5">
                 {
                     <EssayPills currentEssay={currentEssay} setCurrentEssay={setCurrentEssay} />
