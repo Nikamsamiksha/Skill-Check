@@ -17,7 +17,7 @@ export const Games = () => {
                     </Link>
                     <hr />
                     <div className="p-2 py-3">
-                        <Link to="/">
+                        <Link to="//tic-tac-toe">
                             <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Tic Tac Toe</h5>
                         </Link>
                     </div>
@@ -32,7 +32,7 @@ export const Games = () => {
                     </Link>
                     <hr className=''/>
                     <div className="p-2 py-3">
-                        <Link to="/">
+                        <Link to="/maths-game">
                             <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Maths Game</h5>
                         </Link>
                     </div>
