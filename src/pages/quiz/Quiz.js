@@ -53,7 +53,6 @@ export function Quiz() {
   }, [questions]);
 
   function handleAnswerChange(e, index) {
-    console.log(e)
     dispatch({
       type: "answer",
       questionID: currentQuestion,
@@ -85,7 +84,6 @@ export function Quiz() {
     const { uid } = currentUser;
 
     const db = getDatabase();
-    console.log(db)
     const resultRef = ref(db, `result/${uid}`);
 
     await set(resultRef, {

@@ -11,14 +11,14 @@ export default function useEssays() {
     async function fetchEssays() {
       // database related works
       const db = getDatabase();
-      const quizRef = ref(db, "essays");
-      const quizQuery = query(quizRef, orderByKey());
+      const essayRef = ref(db, "essays");
+      const essayQuery = query(essayRef, orderByKey());
       
       try {
         setError(false);
         setLoading(true);
         // request firebase database
-        const snapshot = await get(quizQuery);
+        const snapshot = await get(essayQuery);
         setLoading(false);
         
         if (snapshot.exists()) {

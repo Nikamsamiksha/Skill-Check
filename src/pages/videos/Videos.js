@@ -88,29 +88,29 @@ export const Videos = () => {
                         />
                     </div>
                 }
-                <div className='grid grid-cols-2 lg:grid-cols-3'>
+                <div className='grid grid-cols-2 gap-x-5 lg:grid-cols-3'>
                     {
                         videos && videos.length !== 0 && subject === "English" &&
                         videos[0].map(video =>
-                            <Video key={video.id} video={video} subject={subject} />
+                            <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                     {
                         videos && videos.length !== 0 && subject === "Maths" &&
                         videos[1].map(video =>
-                            <Video key={video.id} video={video} subject={subject} />
+                            <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                     {
                         videos && videos.length !== 0 && subject === "Rhymes" &&
                         videos[3].map(video =>
-                            <Video key={video.id} video={video} subject={subject} />
+                            <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                     {
                         videos && videos.length !== 0 && subject === "Paintings" &&
                         videos[2].map(video =>
-                            <Video key={video.id} video={video} subject={subject} />
+                            <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                 </div>
@@ -122,6 +122,9 @@ export const Videos = () => {
                             Back To Home
                         </button>
                     </Link>
+                </div>
+                <div className='flex justify-between'>
+
                 </div>
             </main>
         </>

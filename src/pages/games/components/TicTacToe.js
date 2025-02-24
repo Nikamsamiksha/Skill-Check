@@ -74,7 +74,6 @@ export const TicTacToe = () => {
     }
 
     function showModal(win) {
-        console.log(win, "wins");
         setGameOver(win);
         setWinner(win);
     }

@@ -24,10 +24,10 @@ export const Essays = () => {
     }
 
     return (
-        <main className='pt-5 lg:pt-10'>
+        <main className='pt-5 lg:pt-5'>
             <Link to={`/`}>
                 <button
-                    className="lg:mt-5 bg-primary-100 px-3 py-2.5 rounded-lg my-3"
+                    className="bg-primary-100 px-3 py-2.5 rounded-lg"
                 >
                     Back To Home
                 </button>
