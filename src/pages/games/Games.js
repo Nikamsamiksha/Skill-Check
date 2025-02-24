@@ -26,7 +26,7 @@ export const Games = () => {
                     <div className="p-2 py-3">
                         <Link to="/tic-tac-toe">
                             <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Tic Tac Toe</h5>
-                            <p className='text-md text-gray-900'>
+                            <p className='text-md text-gray-900 text-center'>
                                 A fun and interactive computerized version of the classic Tic-Tac-Toe game, designed specifically for young children. Kids can play against the computer, helping them develop logical thinking and strategic planning skills.
                             </p>
                         </Link>
@@ -46,7 +46,7 @@ export const Games = () => {
                         <Link to="/maths-game">
                             <h5 className="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Maths Game</h5>
                         </Link>
-                        <p className='text-md text-gray-900'>
+                        <p className='text-md text-gray-900 text-center'>
                             An engaging math game that generates random arithmetic questions using addition, subtraction, multiplication, and division with 1- to 2-digit numbers. It can include multiple-choice answers or direct input to enhance learning through practice.
                         </p>
                     </div>
