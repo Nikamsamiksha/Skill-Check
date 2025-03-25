@@ -69,17 +69,6 @@ export const VideoPage = () => {
         playing={status}
         controls
       />
-      <div className="my-5">
-        <div className="text-xl font-bold my-2">Would you also like to see?</div>
-        <div className="flex gap-x-5">
-          {suggestions.length > 0 ? (
-            suggestions.map((suggestion) => <Video key={suggestion.id} video={suggestion} subject={subject} />)
-          ) : (
-            <p>No related videos found.</p>
-          )}
-        </div>
-
-      </div>
       <div className="flex justify-between p-5 lg:p-0 my-2 lg:my-5">
         <Link to={`/`}>
           <button className="bg-primary-100 inline p-2 lg:p-5 rounded-lg text-md lg:text-2xl lg:games-font hover:shadow-lg">
@@ -97,7 +86,17 @@ export const VideoPage = () => {
           </Link>
         )}
       </div>
-  
+      <div className="my-5">
+        <div className="text-xl font-bold my-2">Would you also like to see?</div>
+        <div className="flex gap-x-5">
+          {suggestions.length > 0 ? (
+            suggestions.map((suggestion) => <Video key={suggestion.id} video={suggestion} subject={subject} />)
+          ) : (
+            <p>No related videos found.</p>
+          )}
+        </div>
+
+      </div>
     </main>
   );
 };

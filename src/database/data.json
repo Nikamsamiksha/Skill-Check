@@ -1302,10 +1302,10 @@
             "title": "Which animal says 'Hiss'?",
             "options": [
               {
-                "title": "Snake"
+                "title": "Frog"
               },
               {
-                "title": "Frog"
+                "title": "Snake"
               },
               {
                 "title": "Cat"
@@ -1319,13 +1319,13 @@
             "title": "What sound does an owl make?",
             "options": [
               {
-                "title": "Hoot"
-              },
-              {
                 "title": "Squeak"
               },
               {
                 "title": "Roar"
+              },
+              {
+                "title": "Hoot"
               },
               {
                 "title": "Growl"
@@ -1361,10 +1361,10 @@
                 "image": "/assets/apple_image.jpg"
               },
               {
-                "image": "/assets/banana_image.jpg"
+                "image": "/assets/grapes_image.jpg"
               },
               {
-                "image": "/assets/grapes_image.jpg"
+                "image": "/assets/banana_image.jpg"
               },
               {
                 "image": "/assets/orange_image.jpg"
@@ -1396,13 +1396,13 @@
                 "image": "/assets/blueberry_image.jpg"
               },
               {
-                "image": "/assets/strawberry_image.jpg"
-              },
-              {
                 "image": "/assets/cherry_image.jpg"
               },
               {
                 "image": "/assets/raspberry_image.jpeg"
+              },
+              {
+                "image": "/assets/strawberry_image.jpg"
               }
             ]
           }
