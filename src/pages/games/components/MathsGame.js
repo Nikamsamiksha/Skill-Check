@@ -36,15 +36,15 @@ export const MathsGame = () => {
   }, [score]); // ✅ Generates a new question ONLY after the score updates
 
   const generateQA = () => {
-    const operators = ["*", "/", "+", "-", "%"];
+    const operators = ["*", "/", "+", "-"];
     const index = Math.floor(Math.random() * operators.length);
     const operator = operators[index];
 
-    let num1 = 1 + Math.floor(Math.random() * 99);
-    let num2 = 1 + Math.floor(Math.random() * 99);
+    let num1 = 1 + Math.floor(Math.random() * 9);
+    let num2 = 1 + Math.floor(Math.random() * 9);
 
     // Avoid division by zero
-    if (operator === "/" || operator === "%") {
+    if (operator === "/") {
       num2 = 1 + Math.floor(Math.random() * 9);
     }
 
@@ -61,9 +61,6 @@ export const MathsGame = () => {
         break;
       case "-":
         correctAns = num1 - num2;
-        break;
-      case "%":
-        correctAns = num1 % num2;
         break;
       default:
         correctAns = num1 + num2;
