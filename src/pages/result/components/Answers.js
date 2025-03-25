@@ -11,6 +11,7 @@ export default function Answers({ options = [], handleChange, input }) {
           <Checkbox
             key={index}
             text={option.title}
+            image={option.image}
             value={index}
             checked={option.checked}
             onChange={(e) => handleChange(e, index)}
@@ -21,6 +22,8 @@ export default function Answers({ options = [], handleChange, input }) {
             className = {"text-green-600"}
             key={index}
             text={option.title}
+            image={option.image}
+            image_class = {"bg-green-200"}
             defaultChecked={option.checked}
             disabled
           />
@@ -29,6 +32,8 @@ export default function Answers({ options = [], handleChange, input }) {
             className={"text-black"}
             key={index}
             text={option.title}
+            image={option.image}
+            image_class = {""}
             defaultChecked={option.checked}
             disabled
           />

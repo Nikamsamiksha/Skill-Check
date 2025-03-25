@@ -24,6 +24,10 @@ export const SubjectCard = ({ subject }) => {
             className = `flex justify-between bg-primary-400 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
             classNameMd = `flex justify-between bg-primary-400 rounded-lg shadow lg:hidden cursor-pointer`
             break;
+        case "GK":
+            className = `flex justify-between bg-primary-700 rounded-lg shadow hidden lg:flex lg:flex-row cursor-pointer`
+            classNameMd = `flex justify-between bg-primary-700 rounded-lg shadow lg:hidden cursor-pointer`
+            break;
         default:
             className = `flex justify-between bg-primary-500 rounded-lg shadow hidden lg:flex lg:flex-row`
             classNameMd = `flex justify-between bg-primary-500 rounded-lg shadow lg:hidden cursor-pointer`

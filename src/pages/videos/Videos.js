@@ -14,6 +14,7 @@ export const Videos = () => {
     const videoUrlEnglish = require('../../assets/english_gif.mp4');
     const videoUrlPainting = require('../../assets/painting_gif.mp4');
     const videoUrlRhymes = require('../../assets/rhymes_gif.mp4');
+    const videoUrlGK = require('../../assets/gk_gif.mp4');
 
     useEffect(() => {
         setPage(1)
@@ -88,6 +89,23 @@ export const Videos = () => {
                         />
                     </div>
                 }
+                {
+                    subject === "GK" &&
+                    <div className='flex gap-x-2 justify-evenly content-center mb-5 px-5 lg:px-0'>
+                        <h2 className='text-bold text-2xl lg:text-7xl font-serif lg:mt-8 text-primary-30 self-center'>Welcome to the world of Knowledge!
+                        </h2>
+                        <ReactPlayer
+                            className="object-cover aspect-ratio self-center"
+                            url={videoUrlGK}
+                            width="30%"
+                            height="20%"
+                            playing={true}
+                            loop={true}
+                            controls={false}
+                            muted={true}
+                        />
+                    </div>
+                }
                 <div className='grid grid-cols-2 gap-x-5 gap-y-5 lg:grid-cols-3'>
                     {
                         videos && videos.length !== 0 && subject === "English" &&
@@ -97,19 +115,25 @@ export const Videos = () => {
                     }
                     {
                         videos && videos.length !== 0 && subject === "Maths" &&
-                        videos[1].map(video =>
+                        videos[2].map(video =>
                             <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                     {
                         videos && videos.length !== 0 && subject === "Rhymes" &&
-                        videos[3].map(video =>
+                        videos[4].map(video =>
                             <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
                     {
                         videos && videos.length !== 0 && subject === "Paintings" &&
-                        videos[2].map(video =>
+                        videos[3].map(video =>
+                            <Video key={video.id} video={video} subject={subject} videos={videos}/>
+                        )
+                    }
+                    {
+                        videos && videos.length !== 0 && subject === "GK" &&
+                        videos[1].map(video =>
                             <Video key={video.id} video={video} subject={subject} videos={videos}/>
                         )
                     }
@@ -122,9 +146,6 @@ export const Videos = () => {
                             Back To Home
                         </button>
                     </Link>
-                </div>
-                <div className='flex justify-between'>
-
                 </div>
             </main>
         </>

@@ -86,7 +86,7 @@ export const VideoPage = () => {
             Back To Home
           </button>
         </Link>
-        {(subject === "Maths" || subject === "English") && (
+        {(subject === "Maths" || subject === "English" || subject === "GK") && (
           <Link to={`/quiz/${subject}/${id}`}>
             <button
               onClick={() => setStatus(!status)}

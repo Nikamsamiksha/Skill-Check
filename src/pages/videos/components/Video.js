@@ -3,10 +3,11 @@ import maths from '../../../assets/maths.jpg';
 import english from '../../../assets/english.jpg';
 import rhymes from '../../../assets/rhymes.png';
 import paintings from '../../../assets/paintings.png';
+import gk from '../../../assets/gk_image.jpg';
+
 import { Link } from 'react-router-dom';
 
 export const Video = ({ video, subject }) => {
-
     
     return (
         <div className="lg:w-full max-w-xs lg:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -40,6 +41,14 @@ export const Video = ({ video, subject }) => {
                     <img
                         className="rounded-t-lg h-44 w-full"
                         src={paintings}
+                        alt={video.title}
+                    />
+                }
+                {
+                    subject === "GK" &&
+                    <img
+                        className="rounded-t-lg h-44 w-full"
+                        src={gk}
                         alt={video.title}
                     />
                 }
