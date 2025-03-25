@@ -220,6 +220,32 @@
         "title": "Hand Drawn Flowers Coloring Page",
         "keyword": "medium"
       }
+    },
+    "GK": {
+      "0": {
+        "youtubeID": "v=efiWeJbdbxk",
+        "title": "Animal Sounds Song: Learn Animal Sounds for Kids",
+        "noq": 4,
+        "keyword": "animal"
+      },
+      "1": {
+        "youtubeID": "v=EpcJTFJUd-g",
+        "title": "Explore wild animals – Learn animal sounds & guess the names",
+        "noq": 4,
+        "keyword": "animal"
+      },
+      "2": {
+        "youtubeID": "v=b7qMfViYSOU",
+        "title": "FRUITS NAME for Toddlers",
+        "noq": 4,
+        "keyword": "fruits"
+      },
+      "3": {
+        "youtubeID": "v=bN36nh-2tuI",
+        "title": "Good habits and Bad habits",
+        "noq": 4,
+        "keyword": "manners"
+      }
     }
   },
   "quiz": {
@@ -1157,6 +1183,298 @@
               },
               {
                 "title": "Add 'ing'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "GK": {
+      "v=EpcJTFJUd-g": {
+        "questions": [
+          {
+            "title": "Which animal makes the 'Moo' sound?",
+            "options": [
+              {
+                "title": "Cow"
+              },
+              {
+                "title": "Sheep"
+              },
+              {
+                "title": "Pig"
+              },
+              {
+                "title": "Duck"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a duck make?",
+            "options": [
+              {
+                "title": "Neigh"
+              },
+              {
+                "title": "Quack"
+              },
+              {
+                "title": "Baa"
+              },
+              {
+                "title": "Cluck"
+              }
+            ]
+          },
+          {
+            "title": "Which animal says 'Baa'?",
+            "options": [
+              {
+                "title": "Cow"
+              },
+              {
+                "title": "Sheep"
+              },
+              {
+                "title": "Goat"
+              },
+              {
+                "title": "Chicken"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a pig make?",
+            "options": [
+              {
+                "title": "Meow"
+              },
+              {
+                "title": "Oink"
+              },
+              {
+                "title": "Chirp"
+              },
+              {
+                "title": "Moo"
+              }
+            ]
+          }
+        ]
+      },
+      "v=efiWeJbdbxk": {
+        "questions": [
+          {
+            "title": "Which animal makes the 'Roar' sound?",
+            "options": [
+              {
+                "title": "Lion"
+              },
+              {
+                "title": "Tiger"
+              },
+              {
+                "title": "Bear"
+              },
+              {
+                "title": "Elephant"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a horse make?",
+            "options": [
+              {
+                "title": "Neigh"
+              },
+              {
+                "title": "Bark"
+              },
+              {
+                "title": "Meow"
+              },
+              {
+                "title": "Chirp"
+              }
+            ]
+          },
+          {
+            "title": "Which animal says 'Hiss'?",
+            "options": [
+              {
+                "title": "Snake"
+              },
+              {
+                "title": "Frog"
+              },
+              {
+                "title": "Cat"
+              },
+              {
+                "title": "Dog"
+              }
+            ]
+          },
+          {
+            "title": "What sound does an owl make?",
+            "options": [
+              {
+                "title": "Hoot"
+              },
+              {
+                "title": "Squeak"
+              },
+              {
+                "title": "Roar"
+              },
+              {
+                "title": "Growl"
+              }
+            ]
+          }
+        ]
+      },
+      "v=b7qMfViYSOU": {
+        "questions": [
+          {
+            "title": "Which fruit is shown in the image?",
+            "image": "/assets/apple_image.jpg",
+            "options": [
+              {
+                "title": "Apple"
+              },
+              {
+                "title": "Banana"
+              },
+              {
+                "title": "Grapes"
+              },
+              {
+                "title": "Mango"
+              }
+            ]
+          },
+          {
+            "title": "Which image represents a banana?",
+            "options": [
+              {
+                "image": "/assets/apple_image.jpg"
+              },
+              {
+                "image": "/assets/banana_image.jpg"
+              },
+              {
+                "image": "/assets/grapes_image.jpg"
+              },
+              {
+                "image": "/assets/orange_image.jpg"
+              }
+            ]
+          },
+          {
+            "title": "Which fruit is shown in the image?",
+            "image": "/assets/mango_image.jpeg",
+            "options": [
+              {
+                "title": "Pineapple"
+              },
+              {
+                "title": "Mango"
+              },
+              {
+                "title": "Papaya"
+              },
+              {
+                "title": "Watermelon"
+              }
+            ]
+          },
+          {
+            "title": "Which image represents a strawberry?",
+            "options": [
+              {
+                "image": "/assets/blueberry_image.jpg"
+              },
+              {
+                "image": "/assets/strawberry_image.jpg"
+              },
+              {
+                "image": "/assets/cherry_image.jpg"
+              },
+              {
+                "image": "/assets/raspberry_image.jpeg"
+              }
+            ]
+          }
+        ]
+      },
+      "v=bN36nh-2tuI": {
+        "questions": [
+          {
+            "title": "Which of the following is an example of good manners?",
+            "options": [
+              {
+                "title": "Saying 'please' and 'thank you'"
+              },
+              {
+                "title": "Interrupting someone while they are speaking"
+              },
+              {
+                "title": "Talking with your mouth full"
+              },
+              {
+                "title": "Ignoring someone who greets you"
+              }
+            ]
+          },
+          {
+            "title": "Which of the following is considered bad manners?",
+            "options": [
+              {
+                "title": "Sharing your toys with friends"
+              },
+              {
+                "title": "Holding the door open for someone"
+              },
+              {
+                "title": "Rolling your eyes when someone is talking"
+              },
+              {
+                "title": "Listening attentively when someone speaks"
+              }
+            ]
+          },
+          {
+            "title": "What should you say when someone helps you?",
+            "options": [
+              {
+                "title": "'Thank you'"
+              },
+              {
+                "title": "'Go away'"
+              },
+              {
+                "title": "'Why did you do that?'"
+              },
+              {
+                "title": "'I don’t care'"
+              }
+            ]
+          },
+          {
+            "title": "Which of the following is a polite way to ask for something?",
+            "options": [
+              {
+                "title": "'Give me that now!'"
+              },
+              {
+                "title": "'Can I please have that?'"
+              },
+              {
+                "title": "'I want that, give it to me!'"
+              },
+              {
+                "title": "'You must give that to me!'"
               }
             ]
           }
@@ -2156,9 +2474,317 @@
           }
         ]
       }
+    },
+    "GK": {
+      "v=EpcJTFJUd-g": {
+        "questions": [
+          {
+            "title": "Which animal makes the 'Moo' sound?",
+            "options": [
+              {
+                "title": "Cow",
+                "correct": true
+              },
+              {
+                "title": "Sheep"
+              },
+              {
+                "title": "Pig"
+              },
+              {
+                "title": "Duck"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a duck make?",
+            "options": [
+              {
+                "title": "Neigh"
+              },
+              {
+                "title": "Quack",
+                "correct": true
+              },
+              {
+                "title": "Baa"
+              },
+              {
+                "title": "Cluck"
+              }
+            ]
+          },
+          {
+            "title": "Which animal says 'Baa'?",
+            "options": [
+              {
+                "title": "Cow"
+              },
+              {
+                "title": "Sheep",
+                "correct": true
+              },
+              {
+                "title": "Goat"
+              },
+              {
+                "title": "Chicken"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a pig make?",
+            "options": [
+              {
+                "title": "Meow"
+              },
+              {
+                "title": "Oink",
+                "correct": true
+              },
+              {
+                "title": "Chirp"
+              },
+              {
+                "title": "Moo"
+              }
+            ]
+          }
+        ]
+      },
+      "v=efiWeJbdbxk": {
+        "questions": [
+          {
+            "title": "Which animal makes the 'Roar' sound?",
+            "options": [
+              {
+                "title": "Lion",
+                "correct": true
+              },
+              {
+                "title": "Tiger"
+              },
+              {
+                "title": "Bear"
+              },
+              {
+                "title": "Elephant"
+              }
+            ]
+          },
+          {
+            "title": "What sound does a horse make?",
+            "options": [
+              {
+                "title": "Neigh",
+                "correct": true
+              },
+              {
+                "title": "Bark"
+              },
+              {
+                "title": "Meow"
+              },
+              {
+                "title": "Chirp"
+              }
+            ]
+          },
+          {
+            "title": "Which animal says 'Hiss'?",
+            "options": [
+              {
+                "title": "Frog"
+              },
+              {
+                "title": "Snake",
+                "correct": true
+              },
+              {
+                "title": "Cat"
+              },
+              {
+                "title": "Dog"
+              }
+            ]
+          },
+          {
+            "title": "What sound does an owl make?",
+            "options": [
+              {
+                "title": "Squeak"
+              },
+              {
+                "title": "Roar"
+              },
+              {
+                "title": "Hoot",
+                "correct": true
+              },
+              {
+                "title": "Growl"
+              }
+            ]
+          }
+        ]
+      },
+      "v=b7qMfViYSOU": {
+        "questions": [
+          {
+            "title": "Which fruit is shown in the image?",
+            "image": "/assets/apple_image.jpg",
+            "options": [
+              {
+                "title": "Apple",
+                "correct": true
+              },
+              {
+                "title": "Banana"
+              },
+              {
+                "title": "Grapes"
+              },
+              {
+                "title": "Mango"
+              }
+            ]
+          },
+          {
+            "title": "Which image represents a banana?",
+            "options": [
+              {
+                "image": "/assets/apple_image.jpg"
+              },
+              {
+                "image": "/assets/grapes_image.jpg"
+              },
+              {
+                "image": "/assets/banana_image.jpg",
+                "correct": true
+              },
+              {
+                "image": "/assets/orange_image.jpg"
+              }
+            ]
+          },
+          {
+            "title": "Which fruit is shown in the image?",
+            "image": "/assets/mango_image.jpeg",
+            "options": [
+              {
+                "title": "Pineapple"
+              },
+              {
+                "title": "Mango",
+                "correct": true
+              },
+              {
+                "title": "Papaya"
+              },
+              {
+                "title": "Watermelon"
+              }
+            ]
+          },
+          {
+            "title": "Which image represents a strawberry?",
+            "options": [
+              {
+                "image": "/assets/blueberry_image.jpg"
+              },
+              {
+                "image": "/assets/cherry_image.jpg"
+              },
+              {
+                "image": "/assets/raspberry_image.jpeg"
+              },
+              {
+                "image": "/assets/strawberry_image.jpg",
+                "correct": true
+              }
+            ]
+          }
+        ]
+      },
+      "v=bN36nh-2tuI": {
+        "questions": [
+          {
+            "title": "Which of the following is an example of good manners?",
+            "options": [
+              {
+                "title": "Saying 'please' and 'thank you'",
+                "correct": true
+              },
+              {
+                "title": "Interrupting someone while they are speaking"
+              },
+              {
+                "title": "Talking with your mouth full"
+              },
+              {
+                "title": "Ignoring someone who greets you"
+              }
+            ]
+          },
+          {
+            "title": "Which of the following is considered bad manners?",
+            "options": [
+              {
+                "title": "Sharing your toys with friends"
+              },
+              {
+                "title": "Holding the door open for someone"
+              },
+              {
+                "title": "Rolling your eyes when someone is talking",
+                "correct": true
+              },
+              {
+                "title": "Listening attentively when someone speaks"
+              }
+            ]
+          },
+          {
+            "title": "What should you say when someone helps you?",
+            "options": [
+              {
+                "title": "'Thank you'",
+                "correct": true
+              },
+              {
+                "title": "'Go away'"
+              },
+              {
+                "title": "'Why did you do that?'"
+              },
+              {
+                "title": "'I don’t care'"
+              }
+            ]
+          },
+          {
+            "title": "Which of the following is a polite way to ask for something?",
+            "options": [
+              {
+                "title": "'Give me that now!'"
+              },
+              {
+                "title": "'Can I please have that?'",
+                "correct": true
+              },
+              {
+                "title": "'I want that, give it to me!'"
+              },
+              {
+                "title": "'You must give that to me!'"
+              }
+            ]
+          }
+        ]
+      }
     }
   },
-  "essays":{
+  "essays": {
     "1": {
       "title": "My Self",
       "points": [
