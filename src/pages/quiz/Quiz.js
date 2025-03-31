@@ -9,6 +9,7 @@ import { Question } from "./components/Question";
 import { useAuth } from "../../contexts/AuthContext";
 import { useDispatch } from "react-redux";
 import { getDatabase, ref, set } from "firebase/database";
+import ReactPlayer from "react-player";
 
 // import { TextToSpeech } from "../TextToSpeech";
 
@@ -36,6 +37,7 @@ const reducer = (state, action) => {
 
 export function Quiz() {
   const { id, subject } = useParams();
+
   const { questions } = useQuestions(id, subject);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const qnaSetter = useDispatch();
@@ -96,6 +98,10 @@ export function Quiz() {
   // calculate percentage of progress
   const percentage = questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
+  const [status, setStatus] = useState(false);
+  function toggleMiniPlayer() {
+    setStatus((prev) => !prev);
+  }
   return (
     // <>
     //   {loading && <div>Loading ...</div>}
@@ -134,43 +140,98 @@ export function Quiz() {
     //   )}
     // </>
     <main>
-      <div className="pt-2 lg:pt-5">
-        {
-          <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} />
-        }
-      </div>
-      <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
-        {
-          <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} />
-        }
-        <div className="image hidden lg:block">
-          <img src={children} alt="Children Image" />
-        </div>
-      </div>
-      <div className="flex flex-row justify-between mx-5 lg:mx-0">
-        <button
-          className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
-          onClick={() => prevQuestion()}
-        >
-          Prev
-        </button>
-        {
-          submitBtn ?
+      {
+        id && id === "v=bN36nh-2tuI" && questions[currentQuestion] &&
+        <>
+          <div className="pt-2 lg:pt-5">
+            {
+              <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} />
+            }
+          </div>
+          <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
+          {
+              <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} largeImage={true} />
+            }
+            <div onClick={toggleMiniPlayer} className="pl-20">
+              <ReactPlayer
+                className="p-5 lg:p-0"
+                url={`http://localhost:3000${questions[currentQuestion].url}`}
+                width="100%"
+                height="100%"
+                playing={status}
+                controls
+              />
+            </div>
+            
+          </div>
+          <div className="flex flex-row justify-between mx-5 lg:mx-0">
             <button
               className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
-              onClick={() => submit()}
+              onClick={() => prevQuestion()}
             >
-              Submit
+              Prev
             </button>
-            :
+            {
+              submitBtn ?
+                <button
+                  className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+                  onClick={() => submit()}
+                >
+                  Submit
+                </button>
+                :
+                <button
+                  className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+                  onClick={() => nextQuestion()}
+                >
+                  Next
+                </button>
+            }
+          </div>
+        </>
+      }
+      {
+        id && id !== "v=bN36nh-2tuI" &&
+        <>
+          <div className="pt-2 lg:pt-5">
+            {
+              <QuestionPills currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} />
+            }
+          </div>
+          <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
+            {
+              <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} />
+            }
+            <div className="image hidden lg:block">
+              <img src={children} alt="Children Image" />
+            </div>
+          </div>
+          <div className="flex flex-row justify-between mx-5 lg:mx-0">
             <button
               className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
-              onClick={() => nextQuestion()}
+              onClick={() => prevQuestion()}
             >
-              Next
+              Prev
             </button>
-        }
-      </div>
+            {
+              submitBtn ?
+                <button
+                  className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+                  onClick={() => submit()}
+                >
+                  Submit
+                </button>
+                :
+                <button
+                  className="bg-primary-600 px-3 py-1 lg:px-5 lg:py-3 text-md lg:text-xl text-center rounded-lg hover:shadow-lg"
+                  onClick={() => nextQuestion()}
+                >
+                  Next
+                </button>
+            }
+          </div>
+        </>
+      }
     </main>
   );
 }

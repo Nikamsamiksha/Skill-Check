@@ -1411,70 +1411,78 @@
       "v=bN36nh-2tuI": {
         "questions": [
           {
-            "title": "Which of the following is an example of good manners?",
+            "title": "Choose the correct option",
+            "url": "/assets/videos/1.mp4",
+            "image": "/assets/washing-hands.png",
             "options": [
               {
-                "title": "Saying 'please' and 'thank you'"
+                "title": "Right girl has good manners"
               },
               {
-                "title": "Interrupting someone while they are speaking"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "Talking with your mouth full"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "Ignoring someone who greets you"
+                "title": "Both girls don't have good manners"
               }
             ]
           },
           {
             "title": "Which of the following is considered bad manners?",
+            "url": "/assets/videos/2.mp4",
+            "image": "/assets/throwing-food.png",
             "options": [
               {
-                "title": "Sharing your toys with friends"
+                "title": "Left boy has good manners"
               },
               {
-                "title": "Holding the door open for someone"
+                "title": "Both boys have good manners"
               },
               {
-                "title": "Rolling your eyes when someone is talking"
+                "title": "Right boy has good manners"
               },
               {
-                "title": "Listening attentively when someone speaks"
+                "title": "Both boys don't have good manners"
               }
             ]
           },
           {
             "title": "What should you say when someone helps you?",
+            "url": "/assets/videos/3.mp4",
+            "image": "/assets/sneezing.jpg",
             "options": [
               {
-                "title": "'Thank you'"
+                "title": "Right girl has good manners"
               },
               {
-                "title": "'Go away'"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "'Why did you do that?'"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "'I don’t care'"
+                "title": "Both girls don't have good manners"
               }
             ]
           },
           {
             "title": "Which of the following is a polite way to ask for something?",
+            "url": "/assets/videos/4.mp4",
+            "image": "/assets/throwing-trash.jpg",
             "options": [
               {
-                "title": "'Give me that now!'"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "'Can I please have that?'"
+                "title": "Right girl has good manners"
               },
               {
-                "title": "'I want that, give it to me!'"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "'You must give that to me!'"
+                "title": "Both girls don't have good manners"
               }
             ]
           }
@@ -2709,74 +2717,82 @@
       "v=bN36nh-2tuI": {
         "questions": [
           {
-            "title": "Which of the following is an example of good manners?",
+            "title": "Choose the correct option",
+            "url": "/assets/videos/1.mp4",
+            "image": "/assets/washing-hands.png",
             "options": [
               {
-                "title": "Saying 'please' and 'thank you'",
+                "title": "Right girl has good manners",
                 "correct": true
               },
               {
-                "title": "Interrupting someone while they are speaking"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "Talking with your mouth full"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "Ignoring someone who greets you"
+                "title": "Both girls don't have good manners"
               }
             ]
           },
           {
             "title": "Which of the following is considered bad manners?",
-            "options": [
+            "url": "/assets/videos/2.mp4",
+            "image": "/assets/throwing-food.png",
+            "options": [  
               {
-                "title": "Sharing your toys with friends"
+                "title": "Left boy has good manners"
               },
               {
-                "title": "Holding the door open for someone"
+                "title": "Both boys have good manners"
               },
               {
-                "title": "Rolling your eyes when someone is talking",
+                "title": "Right boy has good manners",
                 "correct": true
               },
               {
-                "title": "Listening attentively when someone speaks"
+                "title": "Both boys don't have good manners"
               }
             ]
           },
           {
             "title": "What should you say when someone helps you?",
+            "url": "/assets/videos/3.mp4",
+            "image": "/assets/sneezing.jpg",
             "options": [
               {
-                "title": "'Thank you'",
+                "title": "Right girl has good manners",
                 "correct": true
               },
               {
-                "title": "'Go away'"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "'Why did you do that?'"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "'I don’t care'"
+                "title": "Both girls don't have good manners"
               }
             ]
           },
           {
             "title": "Which of the following is a polite way to ask for something?",
+            "url": "/assets/videos/4.mp4",
+            "image": "/assets/throwing-trash.jpg",
             "options": [
               {
-                "title": "'Give me that now!'"
+                "title": "Left girl has good manners"
               },
               {
-                "title": "'Can I please have that?'",
+                "title": "Right girl has good manners",
                 "correct": true
               },
               {
-                "title": "'I want that, give it to me!'"
+                "title": "Both girls have good manners"
               },
               {
-                "title": "'You must give that to me!'"
+                "title": "Both girls don't have good manners"
               }
             ]
           }
