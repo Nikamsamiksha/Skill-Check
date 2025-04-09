@@ -11,8 +11,6 @@ import { useDispatch } from "react-redux";
 import { getDatabase, ref, set } from "firebase/database";
 import ReactPlayer from "react-player";
 
-// import { TextToSpeech } from "../TextToSpeech";
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "questions":
@@ -95,50 +93,11 @@ export function Quiz() {
     history(`/result/${subject}/${id}`);
   }
 
-  // calculate percentage of progress
-  const percentage = questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
-
   const [status, setStatus] = useState(false);
   function toggleMiniPlayer() {
     setStatus((prev) => !prev);
   }
   return (
-    // <>
-    //   {loading && <div>Loading ...</div>}
-    //   {error && (
-    //     <div>
-    //       <img src="" alt="" />
-    //       <button onClick={handleNavigate}>
-    //         Please Login
-    //       </button>
-    //     </div>
-    //   )}
-    //   {!loading && !error && qna && qna.length > 0 && (
-    //     <>
-    //       <div style={{display: "flex"}}>
-    //         <div>
-    //           <h1>{qna[currentQuestion].title}</h1>
-    //           <h4>Question can have multiple answers</h4>
-    //           {/* <TextToSpeech text={qna[currentQuestion].title} /> */}
-    //         </div>
-    //         <img src="" alt="" />
-    //       </div>
-
-    //       {/* <Answers
-    //         input
-    //         options={qna[currentQuestion].options}
-    //         handleChange={handleAnswerChange}
-    //       />
-    //       <ProgressBar
-    //         next={nextQuestion}
-    //         prev={prevQuestion}
-    //         submit={submit}
-    //         progress={percentage}
-    //       /> */}
-    //       {/* <MiniPlayer id={id} title={qna[currentQuestion].title} /> */}
-    //     </>
-    //   )}
-    // </>
     <main>
       {
         id && id === "v=bN36nh-2tuI" && questions[currentQuestion] &&
@@ -149,9 +108,8 @@ export function Quiz() {
             }
           </div>
           <div className="flex flex-row justify-center lg:justify-around mx-5 lg:mx-0 py-2 lg:py-5 my-2 lg:my-3 items-center">
-          {
-              <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} largeImage={true} />
-            }
+            <Question question={questions[currentQuestion]} handleAnswerChange={handleAnswerChange} largeImage={true} />
+          
             <div onClick={toggleMiniPlayer} className="pl-20">
               <ReactPlayer
                 className="p-5 lg:p-0"

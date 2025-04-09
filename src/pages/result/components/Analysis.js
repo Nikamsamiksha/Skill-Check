@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 import Questions from "./Questions";
-import img from '../../../assets/10_score.mp4';
+import { TextToSpeech } from "../../../components/TextToSpeech";
 
 export function Analysis({ answers, score }) {
   
@@ -32,7 +32,10 @@ export function Analysis({ answers, score }) {
   return (
     <div className="flex flex-row items-center justify-between overflow-x-hidden">
       <div className="basis-2/3">
+        <div className="flex items-center">
         <h1 className="text-2xl font-semibold text-primary-40">Question Analysis</h1>
+        <TextToSpeech text={"Given below are question analysis. The correct option are green in colour and the option you chose are ticked!"} />
+        </div>
         <Questions answers={answers} />
       </div>
 

@@ -3,6 +3,7 @@ import image_15 from '../../../assets/score-15-emoji.png';
 import image_10 from '../../../assets/score-10-emoji.jpg';
 import image_5 from '../../../assets/score-5-emoji.jpeg';
 import image_0 from '../../../assets/score-0-emoji.jpg';
+import { TextToSpeech } from '../../../components/TextToSpeech';
 
 export function Summary({ score, noq }) {
   let message = "";
@@ -42,8 +43,9 @@ export function Summary({ score, noq }) {
       {setSummary()}
       <div className="flex items-center justify-between my-5">
         <div>
-          <p className='font-bold text-6xl text-primary-40'>
+          <p className='font-bold text-6xl text-primary-40 flex items-center'>
             Your score is : {score} out of {noq * 5}
+            <TextToSpeech text={`Your score is : ${score} out of ${noq * 5}`} />
           </p>
           <div class="w-full rounded-full h-2.5 my-5 border border-primary-40">
             <div class="bg-primary-40 h-2.5 rounded-full" style={{"width": `${percentage}%`}}></div>
@@ -75,7 +77,10 @@ export function Summary({ score, noq }) {
 
       </div>
       <div className='my-5'>
+        <div className='flex items-center'>
         <h2 className='font-bold text-3xl text-primary-30'>Suggestion</h2>
+        <TextToSpeech text={message} />
+        </div>
         <p className='text-xl my-2'>{message}</p>
       </div>
     </>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../contexts/AuthContext';
 import { LoginModal } from '../../../components/LoginModal';
+import { TextToSpeech } from '../../../components/TextToSpeech';
 
 export const SubjectCard = ({ subject }) => {
 
@@ -43,9 +44,12 @@ export const SubjectCard = ({ subject }) => {
 
     return (
         <>
-            <div onClick={() => checkLogin(subject.title)} className={className} >
+            <div className={className} >
                 <div className="flex flex-col p-3 lg:p-5 lg:w-3/6 justify-start">
-                    <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 self-start">{subject.title}</h5>
+                    <div className='flex flex-row items-center'>
+                        <h5 onClick={() => checkLogin(subject.title)} className="mb-2 text-4xl font-bold tracking-tight text-gray-900 self-start">{subject.title}</h5>
+                        <TextToSpeech text={subject.title + subject.description} />
+                    </div>
                     <p className="mb-3 font-normal text-gray-700 self-start">{subject.videos} videos</p>
                     <div className="mb-3 text-lg font-normal text-black">{subject.description}</div>
                 </div>
