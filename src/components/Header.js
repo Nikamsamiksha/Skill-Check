@@ -5,6 +5,7 @@ import logInIcon from '../assets/LogInIcon.svg';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { LogOutModal } from './LogOutModal';
+import { Timer } from './Timer';
 
 export const Header = () => {
 
@@ -25,7 +26,9 @@ export const Header = () => {
                         <span className='text-black font-bold text-md lg:text-2xl font-serif'>Skill Check</span>
                     </a>
                     <div className="items-center justify-between md:flex md:w-auto md:order-1 text-md lg:font-bold lg:text-2xl font-sans" id="navbar-sticky">
-                        <span>15:23</span>
+                        <span>
+                            {currentUser && <Timer start={{ initialMinute: 2, initialSecond: 0 }} />}
+                        </span>
                     </div>
                     {
                         currentUser ?
