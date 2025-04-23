@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 export const Timer = ({ start }) => {
   const { logout } = useAuth();
@@ -18,8 +19,17 @@ export const Timer = ({ start }) => {
         if (minutes === 0) {
           clearInterval(myInterval);
           logout();
+          toast('Successfully logged out as time exceeded!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"            
+          });
           navigate('/login');
-          window.alert('Session Timed Out')
         } else {
           setMinutes(minutes - 1);
           setSeconds(59);

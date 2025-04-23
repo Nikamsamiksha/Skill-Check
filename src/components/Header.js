@@ -17,6 +17,7 @@ export const Header = () => {
         // console.log(currentUser)
     }, [currentUser])
 
+    
     return (
         <div>
             <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200" >
@@ -27,7 +28,7 @@ export const Header = () => {
                     </a>
                     <div className="items-center justify-between md:flex md:w-auto md:order-1 text-md lg:font-bold lg:text-2xl font-sans" id="navbar-sticky">
                         <span>
-                            {currentUser && <Timer start={{ initialMinute: 2, initialSecond: 0 }} />}
+                            {currentUser && <Timer start={{ initialMinute: 1, initialSecond: 0 }} />}
                         </span>
                     </div>
                     {

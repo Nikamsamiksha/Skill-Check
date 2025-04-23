@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import skillCheckIcon from '../assets/SkillCheckIcon.jpg';
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +22,16 @@ export const Login = () => {
       setLoading(true);
       await login(email, password);
       history("/");
+      toast('Successfully logged in!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"            
+          });
     } catch (err) {
       console.log(err);
       setLoading(false);
