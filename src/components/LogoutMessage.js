@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext"
 
 export const LogoutMessage = ({show, setShow }) => {
 
     const { logout } = useAuth();
+    const navigate = useNavigate();
 
     async function logoutConfirm() {
         await logout();
         setShow(!show);
+        navigate('/login');
     }
 
     return (

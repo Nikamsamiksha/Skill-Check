@@ -28,7 +28,7 @@ export const Header = () => {
                     </a>
                     <div className="items-center justify-between md:flex md:w-auto md:order-1 text-md lg:font-bold lg:text-2xl font-sans" id="navbar-sticky">
                         <span>
-                            {currentUser && <Timer start={{ initialMinute: 60, initialSecond: 0 }} />}
+                            {currentUser && <Timer start={{ initialMinute: 2, initialSecond: 0 }} />}
                         </span>
                     </div>
                     {
